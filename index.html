@@ -2,30 +2,41 @@
 <html>
   <head>
     <title>Gator Bites</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>  
-    <style>
-      #map{position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
-    </style>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"/>
   </head>
 
   <body>
-    <h1>TEST</h1>
-    <div id = "map"></div>
+      <div class="row">
+        <!-- OVERVIEW GOES HERE -->  
+        <div id = "overview" class = col-md-4>
 
-    <script>
-      var map = L.map('map').setView([29.6436, -82.3549], 15);
+        </div>
 
-      L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=BUTtr6UHPeSdE3hiLamg', {
-          attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-        }).addTo(map);
+        <!-- Leaftet implementation -->
+        <div id = "map" class = col-md-8>
+          
+          <script>
+            var map = L.map('map').setView([29.6436, -82.3549], 15);
 
-      var gatorDiningMarker = L.marker([29.641569, -82.346252]).addTo(map);
-      
-      gatorDiningMarker.bindPopup("<b> Gator Dining Services </b><br> Address: <br> Menu: <br> Hours:").openPopup();
-      
+            L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=BUTtr6UHPeSdE3hiLamg', {
+              attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+            }).addTo(map);
 
-    </script>
+            var gatorDiningMarker = L.marker([29.641569, -82.346252]).addTo(map);
+        
+            gatorDiningMarker.bindPopup("<b> Gator Dining Services </b><br> Address: <br> Menu: <br> Hours:").openPopup();  
+
+          </script>
+
+        </div>
+
+      </div>
 
   </body>
+
 </html>
