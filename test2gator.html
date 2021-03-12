@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gator Bites</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>  
+	
+	<link rel="stylesheet" href="styles.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  </head>
+
+  <body>
+      <div class="row">
+        <!-- OVERVIEW GOES HERE -->  
+        <div class="col-md-4" style="padding:0px; background-color: white; font-family: Roboto,Helvetica Neue,sans-serif;">
+    	
+      <!-- Overview Image --> 
+      <div style="border: 4px #0021A5 solid;border-right: 2px #0021A5 solid;">
+    		<img class="img-responsive" src="sample_place.png" alt="place" style="margin: 0 auto; width: 300px; height: 300px;">
+    	</div>
+
+      <!-- Restaurant Name --> 
+    	<div style="padding-left: 20px; padding-bottom: 5px;">
+    		<h2 style="color: #0021A5"><b>Restaurant Name</b></h2> 
+    	</div>
+
+      <!-- Restaurant Details --> 
+    	<div style="padding-left: 25px; padding-top: 5px;border:4px #0021A5 solid; border-right: 2px #0021A5 solid;">    
+        <p style="font-size: 25px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Building|Address</a></p>
+        <p style="font-size: 20px; color: #FA4616">Phone Number</p>
+        <p style="font-size: 25px; color: #6C9AC3;">Hours of Operation</p>
+        <table class="table" style="font-size: 18px;">
+        	<tbody>
+      		<tr>
+        		<td style="color: #FA4616">Monday</td>
+        		<td style="color: #5E8E3F">8:00 am to 3:00 pm</td>
+      		</tr>
+      		<tr>
+        		<td style="color: #FA4616">Tuesday</td>
+        		<td style="color: #5E8E3F">8:00 am to 3:00 pm</td>
+      		</tr>
+      		<tr>
+        		<td style="color: #FA4616">Wednesday</td>
+        		<td style="color: #5E8E3F">8:00 am to 3:00 pm</td>
+      		</tr>
+      		<tr>
+        		<td style="color: #FA4616">Thursday</td>
+        		<td style="color: #5E8E3F">8:00 am to 3:00 pm</td>
+      		</tr>
+      		<tr>
+        		<td style="color: #FA4616">Friday</td>
+        		<td style="color: #5E8E3F">8:00 am to 3:00 pm</td>
+      		</tr>
+      		<tr>
+        		<td style="color: #FA4616">Saturday</td>
+        		<td style="color: #5E8E3F">Closed</td>
+      		</tr>
+      		<tr>
+        		<td style="color: #FA4616">Sunday</td>
+        		<td style="color: #5E8E3F">Closed</td>
+      		</tr>
+      		</tbody>
+      	</table>
+        <p style="font-size: 25px;"><a href="https://gatordining.com/menu/" target="_blank" style="color: #6C9AC3;">Menu</a></p>
+    	</div>
+
+
+    </div>
+
+        <!-- Leaftet implementation -->
+        <div id = "map" class = col-md-8>
+          
+          <script>
+            var map = L.map('map').setView([29.6436, -82.3549], 15);
+
+            L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=BUTtr6UHPeSdE3hiLamg', {
+              attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+            }).addTo(map);
+
+            var gatorDiningMarker = L.marker([29.641569, -82.346252]).addTo(map);
+        
+            gatorDiningMarker.bindPopup("<b> Gator Dining Services </b><br> Address: <br> Menu: <br> Hours:").openPopup();  
+
+          </script>
+
+        </div>
+
+      </div>
+
+  </body>
+
+</html>

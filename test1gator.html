@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gator Bites</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>  
+  
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  </head>
+
+  <body>
+      <div class="row">
+        <!-- OVERVIEW GOES HERE -->  
+        <div class="col-md-4" style="margin: 0px; padding: 0px; background-color: white; font-family: Roboto,Helvetica Neue,sans-serif;">
+
+      <!-- Title -->
+      <div style="padding-left: 20px; border: 4px #0021A5 solid; border-right: 2px #0021A5 solid;background-color: #0021A5">
+        <h2 style="color: white"><b>Gator Dining Map</b></h2>
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="container-fluid" style="background-color: white; padding-top: 20px; border-right: 0px #0021A5 solid;">
+        <form action="">
+          <div class="form-group">
+              <input type="text" class="form-control" id="location_search" placeholder="Search" name="location" style="height: 50px;font-size: 30px;">
+          </div>
+      </form>
+    </div>
+
+    <!-- Sort Opinion -->
+    <div style="padding-left: 20px;padding-bottom: 20px; background-color: white; border-right: 0px #0021A5 solid;">
+      <span style="font-size: 25px; color: #5E8E3F">
+        <b>Sort by:</b>    
+      </span>
+        <select id="sort_by" style="font-size: 25px;color: #5E8E3F">
+          <option value="ope">Open</option>
+          <option value="rec">Recommended</option>
+          <option value="dai">Dairy-free Option</option>
+          <option value="dis">Distance</option>
+        </select>
+    </div>
+
+    <!-- Search Result -->
+    <div style="padding: 0px; background-color: white">
+      <div style="border:2px #0021A5 solid; border-top: 4px #0021A5 solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+      <div style="border:2px #0021A5 solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+      <div style="border:2px  solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+      <div style="border:2px #0021A5 solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+      <div style="border:2px #0021A5 solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+      <div style="border:2px #0021A5 solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+      <div style="border:2px #0021A5 solid;border-bottom: 4px #0021A5 solid; padding-left: 20px;">
+        <p style="font-size: 20px; color: #0021A5"><b>Restaurant Name</b></p>
+        <p style="float: right;font-size: 20px;margin-right: 10px;"><a href="https://www.google.com/maps" target="_blank" style="color: #6C9AC3;">Directions</a></p>
+        <p style="font-size: 18px; color: #FA4616">Building</p>
+        <p style="font-size: 18px; color: #5E8E3F">Open Today: 8:00 to 15:00</p>
+      </div>
+    </div>
+    </div>
+
+        
+        <!-- Leaftet implementation -->
+        <div id = "map" class = col-md-8>
+          
+          <script>
+            var map = L.map('map').setView([29.6436, -82.3549], 15);
+
+            L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=BUTtr6UHPeSdE3hiLamg', {
+              attribution:'<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+            }).addTo(map);
+
+            var gatorDiningMarker = L.marker([29.641569, -82.346252]).addTo(map);
+        
+            gatorDiningMarker.bindPopup("<b> Gator Dining Services </b><br> Address: <br> Menu: <br> Hours:").openPopup();  
+
+          </script>
+
+        </div>
+
+      </div>
+
+  </body>
+
+</html>
+
